@@ -3,8 +3,8 @@ import Link from "next/link"
 
 const Navbar = () => {
   return (
-    <nav className="flex pt-5 justify-around py-4">
-      <div className="flex justify-start items-center mt-2 ml-2">
+    <nav className="flex justify-between py-4 gap-[4%] mx-[5%] mt-2">
+      <div className="flex justify-start items-center basis-[66%]">
         <Link href="/">
           <a className="text-2xl font-bold text-grey-800 mr-12">Internfeed</a>
         </Link>
@@ -18,12 +18,12 @@ const Navbar = () => {
           <a className="text-grey-800">Blog</a>
         </Link>
       </div>
-      <div className="flex justify-end items-center mt-2 mr-2">
+      <div className="flex justify-between items-center basis-[30%]">
         <Link href="/">
-          <a className="text-grey-800">Sign Up</a>
+          <a className="text-grey-800 min-w-fit">Sign Up</a>
         </Link>
         <Link href="/">
-          <a className="text-grey-800 ml-10">Sign In</a>
+          <a className="text-grey-800 px-4 min-w-fit">Sign In</a>
         </Link>
         <Link href="/">
           <button
