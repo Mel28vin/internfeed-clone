@@ -16,8 +16,8 @@ import Searchmenu from "./Searchmenu"
 
 const Content = () => {
   return (
-    <div className="flex justify-between pt-10 pb-32 mx-[5%] gap-[4%] items-start">
-      <div className="flex flex-col basis-[66%]">
+    <div className="pt-10 pb-32 flex lg:justify-between lg:items-start mx-[5%]  lg:gap-[4%]">
+      <div className="block min-w-full lg:flex lg:flex-col lg:basis-[66%] lg:min-w-min">
         <div className="flex justify-between items-center">
           <h3 className="font-bold text-grey-800 text-lg">
             Available Internships
@@ -40,8 +40,8 @@ const Content = () => {
         </div>
         <Internships />
       </div>
-      <div className="basis-[30%] min-h-50">
-        <div className="flex flex-col justify-start gap-5">
+      <div className="lg:basis-[30%] lg:min-h-50">
+        <div className="hidden lg:flex lg:flex-col lg:justify-start lg:gap-5">
           <div className="bg-gray-100">
             <Filters />
           </div>

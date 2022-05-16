@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Notif = () => {
   return (
-    <section className="flex flex-col justify-between mx-6">
+    <div className="flex flex-col justify-between mx-6">
       <div className="font-bold text-lg mt-4">
         Get notified of internships matching your search
       </div>
@@ -21,7 +21,7 @@ const Notif = () => {
           <a>Create Alert</a>
         </button>
       </Link>
-    </section>
+    </div>
   )
 }
 

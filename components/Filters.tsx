@@ -13,7 +13,7 @@ const Filters = () => {
   ]
 
   return (
-    <section className="flex flex-col justify-between mx-6">
+    <div className="flex flex-col justify-between mx-6">
       <div className="mt-4">
         <div className="my-2 font-bold">Keywords</div>
         <input
@@ -52,7 +52,7 @@ const Filters = () => {
           Remote Friendly
         </label>
       </div>
-    </section>
+    </div>
   )
 }
 
