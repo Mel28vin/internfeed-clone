@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from "next/link"
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 import { IconContext } from "react-icons"
 import {
   AiFillBell,
@@ -15,13 +17,18 @@ import Notif from "./Notif"
 import Searchmenu from "./Searchmenu"
 
 const Content = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleFiltersPopup = () => {
+    setIsOpen(!isOpen)
+  }
   return (
     <div className="pt-10 pb-32 flex lg:justify-between lg:items-start mx-[5%]  lg:gap-[4%]">
       <div className="block min-w-full lg:flex lg:flex-col lg:basis-[66%] lg:min-w-min">
         <div className="flex justify-between items-center">
-          <h3 className="font-bold text-grey-800 text-lg">
+          <div className="h3 font-bold text-grey-800 text-lg">
             Available Internships
-          </h3>
+          </div>
           <Link href="/">
             <IconContext.Provider
               value={useMemo(
@@ -33,10 +40,18 @@ const Content = () => {
             >
               <button type="button" className="flex items-center gap-1">
                 <AiFillBell color="" />
-                <a className="text-[#f1553d] underline">Create Alert</a>
+                <a className="text-[#f1553d] underline hover:no-underline">
+                  Create Alert
+                </a>
               </button>
             </IconContext.Provider>
           </Link>
+        </div>
+        <div
+          className="font-bold border text-center py-1 mt-2 cursor-pointer lg:hidden"
+          onClick={toggleFiltersPopup}
+        >
+          Filters
         </div>
         <Internships />
       </div>
