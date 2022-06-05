@@ -24,19 +24,26 @@ const Filters = () => {
       </div>
       <div className="mt-4">
         <div className="my-2 font-bold">Category</div>
-        <input
-          type="text"
-          placeholder="Select Category"
-          list="categories"
-          className="min-w-full h-10 p-3"
-        />
-        <datalist id="categories">
-          {categories.map((category) => (
-            <option value={category} className="min-w-full">
-              {category}
+        <div>
+          <select
+            id="categories-select"
+            className="my-select bg-white h-10 min-w-full px-3 text-gray-400"
+            onChange={() => {
+              const id = document.getElementById("categories-select")
+              id.style.color = "black"
+              // if (id.value === "Select Category") id.style.color = "gray"
+            }}
+          >
+            <option value="" className="" selected>
+              Select Category
             </option>
-          ))}
-        </datalist>
+            {categories.map((category) => (
+              <option value={category} className="min-w-full">
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
       <div className="mt-4">
         <div className="my-2 font-bold">Location</div>
@@ -47,9 +54,20 @@ const Filters = () => {
         />
       </div>
       <div className="my-4">
-        <label htmlFor="Remote">
-          <input type="checkbox" role="switch" className="mr-3 p-3" />
-          Remote Friendly
+        <label
+          htmlFor="toggle-button"
+          className="inline-flex relative items-center cursor-pointer"
+        >
+          <input
+            type="checkbox"
+            value=""
+            id="toggle"
+            className="sr-only peer"
+          />
+          <div className="w-11 h-6 bg-gray-400 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-black">
+            {" "}
+          </div>
+          <span className="ml-3">Remote Friendly</span>
         </label>
       </div>
     </div>

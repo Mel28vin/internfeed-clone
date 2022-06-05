@@ -59,7 +59,7 @@ const Internships = () => {
     },
     {
       image: RVLogo,
-      company: "RV Travel NAtion",
+      company: "RV Travel Nation",
       description: "Marketing Intern",
       location: "Tulsa, OK",
       remote: false,
